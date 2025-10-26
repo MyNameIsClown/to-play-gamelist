@@ -1,3 +1,11 @@
 <label for="q">Buscar videojuego</label>
-<input id="q" [(ngModel)]="query" (keyup.enter)="emit()"/>
-<button type="button" (click)="emit()">Buscar</button>
+<input id="q" [(ngModel)]="query" (keyup.enter)="filter()"/>
+<button type="button" (click)="filter()">Buscar</button>
+<div class="search_items">
+    @for (item of gameList; track $index) {
+        <button (click)="emit(item)" class="search_item">
+            <img src={{item.cover_url}} alt="cover">
+            <div>{{item.title}}</div>
+        </button>
+    }
+</div>

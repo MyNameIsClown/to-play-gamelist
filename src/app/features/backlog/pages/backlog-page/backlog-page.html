@@ -1,2 +1,19 @@
 <h1>To play GameList</h1>
 <app-search-bar (search)="onSearch($event)"></app-search-bar>
+@if (backlogList.length > 0) {
+    <button (click)="sort()">Sort backlog</button>
+}
+@for (backlog of backlogList; track $index) {
+    <div style="display: flex">
+        <div>
+            <h3>{{backlog.game.title}}</h3>
+            <p>{{backlog.game.description}}</p>
+            <p>{{backlog.game.rating}}</p>
+            <p>{{backlog.game.durationHours}}</p>
+            <p>{{backlog.game.durationHours}}</p>
+            <p>{{backlog.calculated_mark}}</p>
+        </div>
+
+        <button (click)="removeItem(backlog)">remove</button>
+    </div>
+}

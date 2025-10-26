@@ -1,8 +1,8 @@
 export interface Game{
-    id: string;
+    id?: string;
     title: string;
-    description: string;
-    rating: number; // Metacritic user score
-    durationHours: number;
+    description?: string;
+    rating?: number; // Metacritic user score
+    durationHours?: number;
     coverUrl?: string;
 }
