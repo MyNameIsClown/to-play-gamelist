@@ -1,0 +1,3 @@
+<label for="q">Buscar videojuego</label>
+<input id="q" [(ngModel)]="query" (keyup.enter)="emit()"/>
+<button type="button" (click)="emit()">Buscar</button>
